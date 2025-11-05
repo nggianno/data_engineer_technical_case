@@ -33,7 +33,9 @@ logs/*.log
 logs/**/*.log
 !logs/.gitkeep
 
-# Exports
+#
+exports/
+exports/*.csv
 utils/exports/*.csv
 !utils/exports/.gitkeep
 
