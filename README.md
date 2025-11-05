@@ -1,10 +1,9 @@
 
-# HEMA ETL Pipeline
+# Data Engineering Challenge | Sales ETL Pipeline
 
 A scalable PySpark-based ETL pipeline implementing a medallion architecture (Bronze → Silver → Gold) for processing sales data.
 
 ## 🏗️ Architecture
-
 
 ## 📋 Features
 
@@ -47,12 +46,7 @@ This project uses **PySpark 3.5.1**, which supports the following Python version
    pip install -r requirements.txt
    ```
 
-4. **Prepare data directories**
-   ```bash
-   mkdir -p data/raw data/bronze data/silver data/gold logs
-   ```
-
-5. **Add your sales data**
+4. **Add your sales data**
    - Place your CSV file in `data/raw/sales_data.csv`
    - Or use the provided sample data
 
@@ -102,14 +96,14 @@ python debug_main.py --layer gold_sales
 The pipeline stores data in Parquet format for optimal performance, but you may need CSV exports for analysis or reporting. Use the `retrieve_tabular_data.py` utility to convert any layer to CSV:
 
 ```bash
-python utils/retrieve_tabular_data.py
+python retrieve_tabular_data.py
 ```
 
 This script will automatically export all layers:
-- **Bronze Layer** → `utils/exports/bronze_data.csv`
-- **Silver Layer** → `utils/exports/silver_data.csv`
-- **Gold Sales** → `utils/exports/gold_sales.csv`
-- **Gold Customers** → `utils/exports/gold_customers.csv`
+- **Bronze Layer** → `exports/bronze_data.csv`
+- **Silver Layer** → `exports/silver_data.csv`
+- **Gold Sales** → `exports/gold_sales.csv`
+- **Gold Customers** → `exports/gold_customers.csv`
 
 ### Features:
 - **Single CSV Output**: Consolidates partitioned Parquet files into one CSV
