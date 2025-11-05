@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Project-specific
+# Data files (raw, bronze, silver, gold layers)
+data/bronze/
+data/silver/
+data/gold/
+!data/raw/.gitkeep
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/gold/.gitkeep
+
+# Logs
+logs/*.log
+logs/**/*.log
+!logs/.gitkeep
+
+# Exports
+utils/exports/*.csv
+!utils/exports/.gitkeep
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Archives
+*.zip
+*.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks (if you add them later)
+.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# Parquet files
+*.parquet
+
+# CRC files (Hadoop checksums)
+.*.crc

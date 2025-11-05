@@ -1,0 +1,19 @@
+
+# config/config.yaml
+
+data_paths:
+  raw: "data/raw/sales_data.csv"
+  bronze: "data/bronze/"
+  silver: "data/silver/"
+  gold_sales: "data/gold/sales/"
+  gold_customers: "data/gold/customers/"
+
+spark:
+  app_name: "HEMA ETL Pipeline"
+  master: "local[*]"
+  disable_crc: true
+  log_level: "WARN"
+
+etl:
+  reference_date: "2018-12-30"
+  partition_columns: ["order_year", "order_month", "order_day"]
