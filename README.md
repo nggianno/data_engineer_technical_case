@@ -32,7 +32,7 @@ This project uses **PySpark 3.5.1**, which supports the following Python version
 1. **Clone the repository**
    ```bash
    git clone <your-repo-url>
-   cd hema_etl
+   cd <repo-name>
    ```
 
 2. **Create virtual environment**
@@ -47,7 +47,7 @@ This project uses **PySpark 3.5.1**, which supports the following Python version
    ```
 
 4. **Add your sales data**
-   - Place your CSV file in `data/raw/sales_data.csv`
+   - Place your CSV file in `data/raw/` path
    - Or use the provided sample data
 
 ## Running the Pipeline
