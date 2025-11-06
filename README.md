@@ -87,8 +87,9 @@ python debug_main.py --layer silver
  ```
 
 ```bash
-# View Gold sales
+# View Gold Sales or Gold Customers
 python debug_main.py --layer gold_sales
+python debug_main.py --layer gold_customers
  ```
 
 ## 📤 Exporting Data to CSV
