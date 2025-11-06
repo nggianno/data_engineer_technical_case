@@ -28,10 +28,16 @@ def incremental_merge_silver(spark, new_df, silver_path):
                        .orderBy(col("execution_datetime").desc())
                        .dropDuplicates(["row_id"])
         )
-        (merged.write.mode("overwrite").partitionBy("order_year", "order_month", "order_day").parquet(silver_path))
+        (merged.write.mode("overwrite").option("mergeSchema", "true").
+         partitionBy("order_year", "order_month", "order_day").parquet(silver_path))
+
         return merged
+
     except Exception:
-        new_df.write.mode("overwrite").partitionBy("order_year", "order_month", "order_day").parquet(silver_path)
+
+        (new_df.write.mode("overwrite").option("mergeSchema", "true").
+         partitionBy("order_year", "order_month", "order_day").parquet(silver_path))
+
         return new_df
 
 def transform_to_silver(spark, bronze_path: str, silver_path: str) -> DataFrame:

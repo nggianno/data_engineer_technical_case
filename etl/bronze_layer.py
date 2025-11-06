@@ -21,6 +21,7 @@ def incremental_merge_parquet(spark, new_df, output_path):
 
         merged_df.write \
             .mode("overwrite") \
+            .option("mergeSchema", "true") \
             .partitionBy("order_year", "order_month", "order_day") \
             .parquet(output_path)
 
@@ -30,6 +31,7 @@ def incremental_merge_parquet(spark, new_df, output_path):
         # First load
         new_df.write \
             .mode("overwrite") \
+            .option("mergeSchema", "true") \
             .partitionBy("order_year", "order_month", "order_day") \
             .parquet(output_path)
         return new_df
